@@ -1,0 +1,43 @@
+---
+layout: base.njk
+title: About
+description: Jane Doe is a designer and developer working with small teams on product design and front-end.
+permalink: /about/
+---
+<header class="page-head">
+  <p class="eyebrow">About</p>
+  <h1>Hi, I'm {{ site.name }}.</h1>
+</header>
+
+<div class="about">
+  <div class="prose">
+    <p class="lede">
+      I'm a designer who writes the code, which mostly means fewer handoffs and
+      fewer surprises between the mock-up and the thing people actually use.
+    </p>
+    <p>
+      I started out building websites for a small studio, spent four years
+      leading design on a mobile product, and now work independently with teams
+      who want one person to carry an idea from research to release.
+    </p>
+    <p>
+      Outside work I draw maps, row badly, and keep a notebook of interfaces that
+      got one small thing exactly right.
+    </p>
+    <p><a href="/contact/">Say hello &rarr;</a></p>
+  </div>
+
+  <section aria-labelledby="experience">
+    <h2 id="experience">Experience</h2>
+    <ol class="timeline">
+      {%- for job in experience %}
+      <li>
+        <p class="when">{{ job.years }}</p>
+        <h3>{{ job.role }}</h3>
+        <p class="org">{{ job.org }}</p>
+        <p>{{ job.summary }}</p>
+      </li>
+      {%- endfor %}
+    </ol>
+  </section>
+</div>

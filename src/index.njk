@@ -1,0 +1,38 @@
+---
+layout: base.njk
+---
+<section class="hero">
+  <p class="eyebrow">{{ site.role }}</p>
+  <h1>I design and build calm, useful software.</h1>
+  <p class="lede">
+    I'm {{ site.name }}. I work with small teams on product design and front-end
+    — from the first sketch to the release that ships. Currently taking on
+    projects for later this year.
+  </p>
+  <p class="actions">
+    <a class="btn btn-primary" href="/projects/">See the work</a>
+    <a class="btn" href="/contact/">Get in touch</a>
+  </p>
+</section>
+
+<section aria-labelledby="selected">
+  <div class="section-head">
+    <h2 id="selected">Selected work</h2>
+    <a href="/projects/">All projects &rarr;</a>
+  </div>
+  <ul class="grid">
+    {%- for p in collections.projects %}{% if p.data.featured %}
+    {% include "card.njk" %}
+    {%- endif %}{% endfor %}
+  </ul>
+</section>
+
+{# Template note — delete this whole <aside> once the site is yours. #}
+<aside class="template-note">
+  <p>
+    <strong>This site is a template.</strong> Jane is a placeholder: swap in your
+    name, your projects and your words, push, and it deploys itself to a URL of
+    your own.
+  </p>
+  <a class="btn btn-primary" href="https://github.com/one9x/template-eleventy-portfolio/generate">Use this template &rarr;</a>
+</aside>

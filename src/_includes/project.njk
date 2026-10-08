@@ -1,0 +1,30 @@
+---
+layout: base.njk
+---
+<article class="project">
+  <a class="back" href="/projects/">&larr; All work</a>
+  <header class="project-head">
+    <p class="eyebrow">{{ year }}</p>
+    <h1>{{ title }}</h1>
+    <p class="lede">{{ summary }}</p>
+    <dl class="facts">
+      <div><dt>Role</dt><dd>{{ role }}</dd></div>
+      <div><dt>Year</dt><dd>{{ year }}</dd></div>
+      <div><dt>Focus</dt><dd>{{ tags | join(', ') }}</dd></div>
+    </dl>
+  </header>
+
+  <img class="cover" src="{{ cover }}" alt="{{ coverAlt }}" width="1600" height="1000" />
+
+  <div class="prose">
+    {{ content | safe }}
+  </div>
+
+  {%- set next = (collections.projects | getNextCollectionItem(page)) or collections.projects[0] %}
+  {%- if next and next.url != page.url %}
+  <nav class="next" aria-label="Next project">
+    <span class="eyebrow">Next project</span>
+    <a href="{{ next.url }}">{{ next.data.title }} &rarr;</a>
+  </nav>
+  {%- endif %}
+</article>

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000">
+  <rect width="1600" height="1000" fill="#efe6d2"/>
+  <circle cx="1320" cy="190" r="240" fill="#e3d6b8"/>
+  <g transform="translate(560 170) rotate(-8 240 330)">
+    <rect width="520" height="660" rx="22" fill="#2f5d50"/>
+  </g>
+  <g transform="translate(560 170) rotate(-2 240 330)">
+    <rect width="520" height="660" rx="22" fill="#4f8a6f"/>
+  </g>
+  <g transform="translate(560 170) rotate(5 240 330)">
+    <rect width="520" height="660" rx="22" fill="#fbf7ee"/>
+    <g stroke="#c9bb99" stroke-width="6" stroke-linecap="round">
+      <path d="M70 150h380M70 230h380M70 310h300M70 390h380M70 470h240"/>
+    </g>
+    <circle cx="420" cy="560" r="44" fill="#4f8a6f"/>
+  </g>
+</svg>

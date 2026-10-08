@@ -1,0 +1,20 @@
+[
+  {
+    "role": "Independent designer & developer",
+    "org": "Self-employed",
+    "years": "2023 — now",
+    "summary": "Product design and front-end builds for small teams, from first sketch to shipped release."
+  },
+  {
+    "role": "Senior product designer",
+    "org": "Acme Software",
+    "years": "2019 — 2023",
+    "summary": "Led design for the mobile apps and built the component library both platforms still use."
+  },
+  {
+    "role": "Front-end developer",
+    "org": "Example Studio",
+    "years": "2016 — 2019",
+    "summary": "Built marketing sites and web apps for studio clients; introduced a shared accessibility checklist."
+  }
+]

@@ -1,0 +1,17 @@
+---
+layout: base.njk
+title: Work
+description: Selected projects by Jane Doe — product design, information design and front-end.
+permalink: /projects/
+---
+<header class="page-head">
+  <p class="eyebrow">Work</p>
+  <h1>Projects</h1>
+  <p class="lede">Product design, information design and front-end, newest first.</p>
+</header>
+
+<ul class="grid">
+  {%- for p in collections.projects %}
+  {% include "card.njk" %}
+  {%- endfor %}
+</ul>

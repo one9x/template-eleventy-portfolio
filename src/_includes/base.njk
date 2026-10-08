@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {%- set pageTitle = (title + ' — ' + site.name) if title else (site.name + ' — ' + site.role) %}
+    {%- set pageDescription = description or summary or site.description %}
+    <title>{{ pageTitle }}</title>
+    <meta name="description" content="{{ pageDescription }}" />
+    <link rel="canonical" href="{{ site.url }}{{ page.url }}" />
+    {%- if noindex %}
+    <meta name="robots" content="noindex" />
+    {%- endif %}
+    <meta property="og:type" content="{{ 'article' if cover else 'website' }}" />
+    <meta property="og:site_name" content="{{ site.name }}" />
+    <meta property="og:title" content="{{ pageTitle }}" />
+    <meta property="og:description" content="{{ pageDescription }}" />
+    <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="wrap header-row">
+        <a class="brand" href="/">{{ site.name }}</a>
+        <nav aria-label="Main">
+          <a href="/projects/" {% if page.url.startsWith('/projects/') %}aria-current="page"{% endif %}>Work</a>
+          <a href="/about/" {% if page.url == '/about/' %}aria-current="page"{% endif %}>About</a>
+          <a href="/contact/" {% if page.url.startsWith('/contact/') %}aria-current="page"{% endif %}>Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" class="wrap">
+      {{ content | safe }}
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap footer-row">
+        <p>&copy; {{ site.year }} {{ site.name }}</p>
+        <ul class="links">
+          {%- for l in site.links %}
+          <li><a href="{{ l.url }}">{{ l.label }}</a></li>
+          {%- endfor %}
+        </ul>
+        {# Delete this line if you'd rather not say where the site is hosted. #}
+        <p class="credit">Deployed on <a href="https://one9x.com/templates">One9x Pages</a></p>
+      </div>
+    </footer>
+  </body>
+</html>

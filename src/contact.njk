@@ -1,0 +1,40 @@
+---
+layout: base.njk
+title: Contact
+description: Get in touch with Jane Doe about a project.
+permalink: /contact/
+---
+<header class="page-head">
+  <p class="eyebrow">Contact</p>
+  <h1>Let's talk about your project.</h1>
+  <p class="lede">
+    Tell me a little about what you're making and when. I reply to every
+    message within two working days.
+  </p>
+</header>
+
+{#
+  This form posts to One9x Forms, the form service built into every One9x
+  Pages site. It does nothing until you turn it on in the dashboard — see
+  "Turn on the contact form" in README.md. Locally there is no /_one9x/ to
+  post to, so Send fails; that is expected.
+
+  The field names are the contract with the form you define in the dashboard:
+  name, email, message. Rename one here and submissions are refused.
+#}
+<script type="module" src="/_one9x/altcha.js"></script>
+<form class="contact-form" action="/_one9x/forms/contact" method="POST">
+  <input type="hidden" name="_next" value="/contact/thanks/">
+  <label for="f-name">Name</label>
+  <input id="f-name" type="text" name="name" autocomplete="name" required>
+  <label for="f-email">Email</label>
+  <input id="f-email" type="email" name="email" autocomplete="email" required>
+  <label for="f-message">Message</label>
+  <textarea id="f-message" name="message" rows="6" required></textarea>
+  <!-- hidden trap: bots fill it, people don't -->
+  <input name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+  <altcha-widget auto="onsubmit" challenge="/_one9x/captcha/challenge"></altcha-widget>
+  <button class="btn btn-primary">Send</button>
+</form>
+
+<p class="aside">Prefer email? Write to <a href="mailto:{{ site.email }}">{{ site.email }}</a>.</p>
